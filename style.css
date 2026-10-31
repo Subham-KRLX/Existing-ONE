@@ -1,0 +1,67 @@
+:root {
+  color-scheme: light;
+  --page: #f7f6f2;
+  --surface: #ffffff;
+  --text: #252b26;
+  --muted: #626b62;
+  --border: #d9ddd5;
+  --accent: #386245;
+  --art-slate: #dce4df;
+  --art-clay: #eadbd0;
+  --art-sand: #e7e1d1;
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #151c18;
+  --surface: #1d2721;
+  --text: #edf1e9;
+  --muted: #abb9ac;
+  --border: #3a493e;
+  --accent: #b2cda8;
+  --art-slate: #344b40;
+  --art-clay: #58483f;
+  --art-sand: #4b4c39;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.5; }
+a { color: inherit; }
+.site-header, main, .site-footer { width: min(1120px, calc(100% - 64px)); margin-inline: auto; }
+.site-header { min-height: 102px; display: flex; justify-content: space-between; align-items: center; gap: 24px; border-bottom: 1px solid var(--border); }
+.brand { text-decoration: none; font-size: 23px; font-weight: 800; letter-spacing: -1px; }
+.brand-dot { color: var(--accent); }
+.appearance { display: flex; align-items: center; gap: 12px; color: var(--muted); font-size: 13px; }
+select { min-width: 108px; padding: 10px 12px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface); color: var(--text); font: inherit; cursor: pointer; }
+select:focus-visible, a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+.intro { padding-top: 62px; }
+.eyebrow, .category { font-size: 10px; font-weight: 700; letter-spacing: 2px; color: var(--accent); }
+h1 { margin: 22px 0; font-size: clamp(42px, 6vw, 70px); line-height: 1.06; letter-spacing: -3px; font-weight: 600; }
+.intro-copy { max-width: 470px; font-size: 16px; color: var(--muted); }
+.collection-meta { margin-top: 42px; padding-block: 17px; display: flex; justify-content: space-between; gap: 16px; border-top: 1px solid var(--border); color: var(--muted); font-size: 11px; }
+.products { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; padding-bottom: 45px; }
+.product-card { border: 1px solid var(--border); background: var(--surface); border-radius: 10px; overflow: hidden; }
+.product-art { height: 215px; position: relative; display: grid; place-items: center; overflow: hidden; }
+.art-notebook { background: var(--art-slate); }
+.art-cup { background: var(--art-clay); }
+.art-tray { background: var(--art-sand); }
+.art-index { position: absolute; left: 16px; bottom: 12px; color: var(--text); font-size: 10px; opacity: .65; }
+.notebook-shape { width: 100px; height: 140px; background: #465b50; border-radius: 3px 8px 8px 3px; transform: rotate(-12deg); box-shadow: 12px 15px 20px #0002, inset 7px 0 #34483c; }
+.notebook-shape::after { content: ""; display: block; width: 39px; height: 2px; background: #afbdaf; margin: 33px auto; }
+.cup-shape { width: 95px; height: 92px; background: #b87653; border-radius: 8px 8px 32px 32px; box-shadow: inset 0 7px #744733, 8px 13px 18px #0002; position: relative; }
+.cup-shape::after { content: ""; position: absolute; right: -27px; top: 15px; width: 34px; height: 44px; border: 9px solid #b87653; border-left: 0; border-radius: 0 24px 24px 0; }
+.tray-shape { width: 156px; height: 102px; background: #bcaa80; border: 11px solid #d0bf96; border-radius: 22px; transform: rotate(-13deg); box-shadow: inset 3px 4px 9px #0002, 8px 15px 18px #0002; }
+.product-details { padding: 20px; }
+.category { font-size: 9px; margin: 0 0 8px; }
+h2 { font-size: 21px; letter-spacing: -.5px; margin: 0; font-weight: 600; }
+.product-details > p:not(.category) { color: var(--muted); font-size: 12px; margin: 8px 0 24px; }
+.product-footer { border-top: 1px solid var(--border); padding-top: 14px; display: flex; justify-content: space-between; gap: 8px; align-items: center; font-size: 11px; color: var(--muted); }
+.product-footer strong { font-size: 13px; color: var(--text); }
+.site-footer { padding-block: 22px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; gap: 20px; color: var(--muted); font-size: 10px; }
+@media (max-width: 700px) {
+  .site-header, main, .site-footer { width: calc(100% - 36px); }
+  .site-header { min-height: 85px; }
+  .appearance { gap: 6px; }
+  .intro { padding-top: 36px; }
+  .products { grid-template-columns: 1fr; }
+  .product-art { height: 230px; }
+  .collection-meta, .site-footer { flex-direction: column; gap: 6px; }
+}
