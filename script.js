@@ -38,7 +38,7 @@ themeSelect.addEventListener("change", () => {
 });
 
 systemAppearance.addEventListener("change", (event) => {
-  if (themeSelect.value !== "system") {
+  if (themeSelect.value === "system") {
     applyAppearance(event.matches ? "dark" : "light");
   }
 });
